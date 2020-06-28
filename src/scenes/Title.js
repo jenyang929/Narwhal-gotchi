@@ -1,5 +1,4 @@
 import Phaser from "phaser";
-// import InputText from "phaser3-rex-plugins/plugins/inputtext.js";
 // home page
 
 export default class TitleScene extends Phaser.Scene {
@@ -12,9 +11,6 @@ export default class TitleScene extends Phaser.Scene {
   }
 
   create() {
-    // let inputText = new InputText(this.scene.scene, 400, 300, 100, 50, {});
-    // this.add.existing(inputText);
-
     let background = this.add.sprite(400, 300, "sea");
     background.setScale(1.44);
 
@@ -27,8 +23,6 @@ export default class TitleScene extends Phaser.Scene {
       font: "20px Pacifico",
       fill: "#F0FFF0",
     });
-
-    // const inputText = scene.add.rexInputText(400, 300, width, height, config)
 
     this.time.addEvent({
       delay: 2000,

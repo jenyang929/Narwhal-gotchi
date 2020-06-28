@@ -129,6 +129,7 @@ export default class extends Phaser.Scene {
           this.friendAddsHP = null;
         });
       }
+
       // as you play with friend, HP increases
       this.friendAddsHP = this.time.addEvent({
         delay: 2000,
@@ -185,7 +186,7 @@ export default class extends Phaser.Scene {
       this.scene.start("LoadingGame");
     });
   }
-
+  // background randomized floating bubbles
   bubbleFloat() {
     const x = Math.floor(Math.random() * Math.floor(800));
     const size = (Math.random() * (0.09 - 0.01) + 0.01).toFixed(4);
@@ -249,6 +250,7 @@ export default class extends Phaser.Scene {
     });
   }
 
+  // background infinitely scrolling
   update() {
     this.bg.tilePositionX -= 0.5;
   }
