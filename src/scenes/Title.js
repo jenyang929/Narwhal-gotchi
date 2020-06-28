@@ -15,12 +15,6 @@ export default class TitleScene extends Phaser.Scene {
     // let inputText = new InputText(this.scene.scene, 400, 300, 100, 50, {});
     // this.add.existing(inputText);
 
-    let inputText = this.add.rexInputText(400, 400, 10, 10, {
-      type: "textarea",
-      text: "hello world",
-      fontSize: "12px",
-    });
-
     let background = this.add.sprite(400, 300, "sea");
     background.setScale(1.44);
 
