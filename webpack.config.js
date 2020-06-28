@@ -1,16 +1,13 @@
 var path = require("path");
 var webpack = require("webpack");
 var BrowserSyncPlugin = require("browser-sync-webpack-plugin");
-const functions = require("firebase-functions");
-const admin = require("firebase-admin");
-admin.initializeApp();
 
 module.exports = {
   entry: {
     app: [path.resolve(__dirname, "src/main.js")],
     vendor: ["phaser"],
   },
-  mode: (functions.config().runtime || {}).env || "development",
+  mode: "development",
   output: {
     pathinfo: true,
     path: path.resolve(__dirname, "dist"),
