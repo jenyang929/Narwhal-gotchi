@@ -100,7 +100,7 @@ export default class extends Phaser.Scene {
     foodButton.setInteractive();
     foodButton.on("pointerdown", () => {
       const shrimp = this.physics.add.image(118, 530, "shrimp");
-      shrimp.setScale(0.05);
+      shrimp.setScale(0.5);
       shrimp.customParams = { health: 20 };
       shrimp.setInteractive();
       this.input.setDraggable(shrimp);
@@ -239,7 +239,8 @@ export default class extends Phaser.Scene {
   // background randomized floating bubbles
   bubbleFloat() {
     const x = Math.floor(Math.random() * Math.floor(800));
-    const size = (Math.random() * (0.09 - 0.01) + 0.01).toFixed(4);
+    const size = Math.random() * (1 - 0.7) + 0.1;
+    // const size = (Math.random() * (0.09 - 0.01) + 0.01).toFixed(4);
     const bubble = this.add.image(x, 600, "bubble");
     bubble.setScale(size);
 
