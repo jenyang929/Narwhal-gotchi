@@ -9,7 +9,16 @@ export default class LoadingGame extends Phaser.Scene {
   }
 
   preload () {
-
+    this.load.image('whale1', './assets/whaleAnimation/whale1.png')
+    this.load.image('whale2', './assets/whaleAnimation/whale2.png')
+    this.load.image('whale3', './assets/whaleAnimation/whale3.png')
+    this.load.image('whale4', './assets/whaleAnimation/whale4.png')
+    this.load.image('whale5', './assets/whaleAnimation/whale5.png')
+    this.load.image('whale6', './assets/whaleAnimation/whale6.png')
+    this.load.image('whale7', './assets/whaleAnimation/whale7.png')
+    this.load.image('whale8', './assets/whaleAnimation/whale8.png')
+    this.load.image('whale9', './assets/whaleAnimation/whale9.png')
+    this.load.image('whale10', './assets/whaleAnimation/whale10.png')
   }
 
   create () {

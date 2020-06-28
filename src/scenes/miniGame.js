@@ -155,6 +155,13 @@ export default class extends Phaser.Scene {
       },
     });
 
+    this.time.addEvent({
+      delay: 3000,
+      callback: () => {
+        squid.destroy();
+      },
+    });
+
     // COLLISION NARWAL + SQUID
     this.physics.add.overlap(this.miniNarwal, squid, () => {
       this.squidDisappear(squid);
@@ -190,15 +197,15 @@ export default class extends Phaser.Scene {
         this.failGame();
         this.gameStarted = false;
         this.gameOverText = this.add.text(
-          130,
-          300,
+          145,
+          180,
           "Game Over! Restart to play again",
           {
             font: "40px Pacifico",
             fill: "#0C1B33",
           }
         );
-        this.restartButton = this.add.text(400, 250, "RESTART");
+        this.restartButton = this.add.text(385, 370, "RESTART");
         this.restartButton.setInteractive().on("pointerdown", () => {
           if (!this.gameStarted) {
             this.restartGame();
@@ -254,15 +261,15 @@ export default class extends Phaser.Scene {
 
   exitText() {
     this.timesUp = this.add.text(
-      130,
-      300,
+      240,
+      150,
       `Time's Up!! \nCurrent Score: ${this.score} \nCoins Received: ${this.score}`,
       {
         font: "40px Pacifico",
         fill: "#0C1B33",
       }
     );
-    this.restartButton = this.add.text(400, 250, "RESTART");
+    this.restartButton = this.add.text(385, 425, "RESTART");
     this.restartButton.setInteractive().on("pointerdown", () => {
       if (!this.gameStarted) {
         this.restartGame();

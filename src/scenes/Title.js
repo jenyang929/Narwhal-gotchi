@@ -7,12 +7,12 @@ export default class TitleScene extends Phaser.Scene {
   }
 
   preload() {
-    this.load.image("sea", "./assets/images/underwater.jpg");
+    this.load.image("sea", "./assets/images/narwal3.jpg");
   }
 
   create() {
     let background = this.add.sprite(400, 300, "sea");
-    background.setScale(1.44);
+    background.setScale(0.8);
 
     this.add.text(180, 100, "Narwal-gotchi", {
       font: "65px Pacifico",
@@ -25,7 +25,7 @@ export default class TitleScene extends Phaser.Scene {
     });
 
     this.time.addEvent({
-      delay: 2000,
+      delay: 5000,
       callback: () => {
         this.scene.start("GameScene");
       },

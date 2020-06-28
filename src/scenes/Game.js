@@ -9,17 +9,38 @@ export default class extends Phaser.Scene {
   }
   init() {}
   preload() {
-    // let background = this.add.image(400, 300, "background");
     let background = this.load.image(
       "seasprite",
       "./assets/images/seasprite.png"
     );
+    this.load.spritesheet("coin", "./assets/images/coinsprite.png", {
+      frameWidth: 200,
+      frameHeight: 200,
+      endFrame: 6,
+    });
   }
 
   create() {
-    // characters
+    // characters, bakgrounds, buttons
     this.bg = this.add.tileSprite(400, 300, 800, 600, "background");
-    // this.bg = this.add.tileSprite(0, 0, 800, 600, "seasprite.png").setOrigin(0);
+
+    // COIN SPRITE
+    const config = {
+      key: "coinspins",
+      frames: this.anims.generateFrameNumbers("coin", {
+        start: 0,
+        end: 5,
+        first: 5,
+      }),
+      frameRate: 10,
+      repeat: -1,
+    };
+
+    this.anims.create(config);
+    const coinspins = this.add.sprite(310, 40, "coin");
+    coinspins.setScale(0.17);
+    coinspins.anims.play("coinspins");
+    this.add.text(330, 30, "Total: 100 Coins");
 
     let foodButton = this.add.image(200, 530, "button");
     foodButton.setScale(0.5);
@@ -185,7 +206,33 @@ export default class extends Phaser.Scene {
     gameButton.on("pointerdown", () => {
       this.scene.start("LoadingGame");
     });
+
+    // narwal POOP
+    this.narwalPoops = this.time.addEvent({
+      delay: 5000,
+      callback: () => {
+        this.pooped = this.physics.add.image(200, 420, "poop");
+        this.pooped.setScale(0.04);
+        this.pooped.setCollideWorldBounds(true);
+        this.pooped.setInteractive();
+        this.input.setDraggable(this.pooped);
+        this.trash = this.physics.add.image(680, 100, "trash");
+        this.trash.setScale(0.08);
+        this.trash.setInteractive();
+
+        // COLLISION OF POOP & TRASH
+        this.physics.add.overlap(this.pooped, this.trash, () => {
+          this.disappear(this.pooped);
+          this.disappear(this.trash);
+        });
+      },
+    });
   }
+
+  disappear(item) {
+    item.destroy();
+  }
+
   // background randomized floating bubbles
   bubbleFloat() {
     const x = Math.floor(Math.random() * Math.floor(800));

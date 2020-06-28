@@ -17,12 +17,31 @@
         margin: 0;
         padding: 0;
       }
+      .flexcontainer {
+        width: 100vw;
+        height: 100vh;
+        background: black;
+        /*Flex-Container*/
+        display: flex;
+        justify-content: center;
+        /*align-items: center;*/
+        /* background-image: url("./assets/images/orange.jpg"); */
+      }
+      .can {
+        align-self: center;
+        border-radius: 32px;
+        box-shadow: 0 0 0 2pt white;
+        /* width: 50vw; */
+        background: white;
+      }
     </style>
   </head>
 
   <body>
     <!-- <input type="text" name="username" id="utext" /> -->
-    <div id="content"></div>
+    <div class="flexcontainer">
+      <div id="content" class="can"></div>
+    </div>
     <script src="dist/vendor.bundle.js"></script>
     <script src="dist/bundle.js"></script>
   </body>
