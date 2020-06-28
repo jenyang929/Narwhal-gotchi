@@ -8,7 +8,6 @@ export default class LoadingGame extends Phaser.Scene {
     super({ key: 'LoadingToHome' })
   }
   init (data) {
-    console.log('data', data)
     this.score = data.score
   }
   preload () {

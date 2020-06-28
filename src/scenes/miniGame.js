@@ -116,7 +116,6 @@ export default class extends Phaser.Scene {
     const y = Math.floor(Math.random() * Math.floor(600));
     this.orca = this.physics.add.image(0, y, "orca");
     this.orca.setScale(0.2);
-    // this.orca.setCollideWorldBounds(true)
     this.tweens.add({
       targets: this.orca,
       props: {

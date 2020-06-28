@@ -8,7 +8,6 @@ export default class extends Phaser.Scene {
     super({ key: "GameScene" });
   }
   init(data) {
-    console.log("data in main game", data);
     this.score = this.score + data.score || 100;
   }
   preload() {
