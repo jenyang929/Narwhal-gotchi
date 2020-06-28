@@ -1,19 +1,29 @@
-import Phaser from 'phaser'
+import Phaser from "phaser";
 
-import BootScene from './scenes/Boot'
-import SplashScene from './scenes/Splash'
-import GameScene from './scenes/Game'
+import BootScene from "./scenes/Boot";
+import TitleScene from "./scenes/Title";
+import GameScene from "./scenes/Game";
+import MiniGameScene from "./scenes/miniGame";
+import LoadingGame from "./scenes/LoadingGame";
+import LoadingToHome from "./scenes/LoadingToHome";
 
-import config from './config'
+import config from "./config";
 
 const gameConfig = Object.assign(config, {
-  scene: [BootScene, SplashScene, GameScene]
-})
+  scene: [
+    BootScene,
+    TitleScene,
+    GameScene,
+    LoadingGame,
+    MiniGameScene,
+    LoadingToHome,
+  ],
+});
 
 class Game extends Phaser.Game {
-  constructor () {
-    super(gameConfig)
+  constructor() {
+    super(gameConfig);
   }
 }
 
-window.game = new Game()
+window.game = new Game();
