@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Narwhal-Gotchi</title>
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, user-scalable=no"
+    />
+    <meta name="HandheldFriendly" content="True" />
+    <meta name="MobileOptimized" content="320" />
+    <meta http-equiv="cleartype" content="on" />
+
+    <style>
+      html,
+      body {
+        margin: 0;
+        padding: 0;
+      }
+      .flexcontainer {
+        width: 100vw;
+        height: 100vh;
+        background: black;
+        /*Flex-Container*/
+        display: flex;
+        justify-content: center;
+        /*align-items: center;*/
+        /* background-image: url("./assets/images/orange.jpg"); */
+      }
+      .can {
+        align-self: center;
+        border-radius: 32px;
+        box-shadow: 0 0 0 2pt white;
+        /* width: 50vw; */
+        background: white;
+      }
+    </style>
+  </head>
+
+  <body>
+    <!-- <input type="text" name="username" id="utext" /> -->
+    <div class="flexcontainer">
+      <div id="content" class="can"></div>
+    </div>
+    <script src="dist/vendor.bundle.js"></script>
+    <script src="dist/bundle.js"></script>
+
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="/__/firebase/7.15.5/firebase-app.js"></script>
+
+    <!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+    <script src="/__/firebase/7.15.5/firebase-analytics.js"></script>
+
+    <!-- Initialize Firebase -->
+    <script src="/__/firebase/init.js"></script>
+  </body>
+</html>
