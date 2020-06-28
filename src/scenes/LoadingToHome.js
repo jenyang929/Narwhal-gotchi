@@ -7,7 +7,10 @@ export default class LoadingGame extends Phaser.Scene {
   constructor () {
     super({ key: 'LoadingToHome' })
   }
-
+  init (data) {
+    console.log('data', data)
+    this.score = data.score
+  }
   preload () {
     this.load.image('whale1', './assets/whaleAnimation/whale1.png')
     this.load.image('whale2', './assets/whaleAnimation/whale2.png')
@@ -54,7 +57,7 @@ export default class LoadingGame extends Phaser.Scene {
     this.time.addEvent({
       delay: 5000,
       callback: () => {
-        this.scene.start('GameScene')
+        this.scene.start('GameScene', { score: this.score })
       },
       callbackScope: this
     })

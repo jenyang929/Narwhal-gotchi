@@ -39,7 +39,7 @@ export default class extends Phaser.Scene {
     home.setScale(0.06);
     home.setInteractive();
     home.on("pointerdown", () => {
-      this.scene.start("LoadingToHome");
+      this.scene.start("LoadingToHome", { score: this.score });
     });
 
     // TEXT FOR SCORE

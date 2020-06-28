@@ -7,7 +7,10 @@ export default class extends Phaser.Scene {
   constructor() {
     super({ key: "GameScene" });
   }
-  init() {}
+  init(data) {
+    console.log("data in main game", data);
+    this.score = this.score + data.score || 100;
+  }
   preload() {
     let background = this.load.image(
       "seasprite",
@@ -40,7 +43,8 @@ export default class extends Phaser.Scene {
     const coinspins = this.add.sprite(310, 40, "coin");
     coinspins.setScale(0.17);
     coinspins.anims.play("coinspins");
-    this.add.text(330, 30, "Total: 100 Coins");
+
+    this.add.text(330, 30, `Total: ${this.score} Coins`);
 
     let foodButton = this.add.image(200, 530, "button");
     foodButton.setScale(0.5);
