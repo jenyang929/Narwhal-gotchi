@@ -55,24 +55,24 @@ export default class extends Phaser.Scene {
     home.setScale(0.06);
     let happyEmoji = this.add.image(50, 150, "happy");
     happyEmoji.setScale(0.02);
-    let narwal = this.physics.add.sprite(400, 300, "narwal");
-    narwal.setScale(0.5);
-    narwal.setCollideWorldBounds(true);
+    let narwhal = this.physics.add.sprite(400, 300, "narwhal");
+    narwhal.setScale(0.5);
+    narwhal.setCollideWorldBounds(true);
 
-    // NARWAL ACTIONS
-    narwal.customParams = { health: 100, mood: "happy" };
-    narwal.setInteractive();
-    this.input.setDraggable(narwal);
+    // NARWHAL ACTIONS
+    narwhal.customParams = { health: 100, mood: "happy" };
+    narwhal.setInteractive();
+    this.input.setDraggable(narwhal);
     this.input.on("drag", (pointer, gameObject, dragX, dragY) => {
       gameObject.x = dragX;
       gameObject.y = dragY;
     });
-    narwal.on("pointerup", () => {
-      this.bounce(narwal);
+    narwhal.on("pointerup", () => {
+      this.bounce(narwhal);
     });
 
     // TEXT & HP
-    this.add.text(30, 20, "Narwal ", {
+    this.add.text(30, 20, "Narwhal ", {
       font: "30px Pacifico",
       fill: "#F0FFF0",
     });
@@ -92,7 +92,7 @@ export default class extends Phaser.Scene {
       fill: "#F0FFF0",
     });
 
-    const friendNarwal = this.add.text(370, 515, "FRIEND", {
+    const friendNarwhal = this.add.text(370, 515, "FRIEND", {
       font: "20px pacifico",
       fill: "#F0FFF0",
     });
@@ -107,7 +107,7 @@ export default class extends Phaser.Scene {
 
       // COLLISION
       const collision = this.physics.add.overlap(
-        narwal,
+        narwhal,
         shrimp,
         () => {
           this.increaseHealth(20);
@@ -183,7 +183,7 @@ export default class extends Phaser.Scene {
         this.changeHPText();
 
         if (this.hp.value === 0 && !this.sadEmoji) {
-          this.spin(narwal);
+          this.spin(narwhal);
           this.sadEmoji = this.add.image(50, 150, "sad");
           this.sadEmoji.setScale(0.02);
         } else if (this.hp.value > 0 && this.sadEmoji) {
@@ -210,8 +210,8 @@ export default class extends Phaser.Scene {
       this.scene.start("LoadingGame");
     });
 
-    // narwal POOP
-    this.narwalPoops = this.time.addEvent({
+    // narwhal POOP
+    this.narwhalPoops = this.time.addEvent({
       delay: 5000,
       callback: () => {
         this.pooped = this.physics.add.image(200, 420, "poop");
@@ -268,9 +268,9 @@ export default class extends Phaser.Scene {
     this.currentHP.setText(`HP: ${this.hp.value}`);
   }
 
-  bounce(narwal) {
+  bounce(narwhal) {
     this.tweens.add({
-      targets: narwal,
+      targets: narwhal,
       props: {
         y: {
           value: 10,
@@ -291,9 +291,9 @@ export default class extends Phaser.Scene {
     item.disableBody(true, true);
   }
 
-  spin(narwal) {
+  spin(narwhal) {
     this.tweens.add({
-      targets: narwal,
+      targets: narwhal,
       angle: 360,
       duration: 4000,
       repeat: 2,

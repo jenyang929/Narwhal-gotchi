@@ -11,12 +11,12 @@ export default class extends Phaser.Scene {
   preload () {
     this.fontsReady = false
     this.fontsLoaded = this.fontsLoaded.bind(this)
-    this.add.text(250, 200, 'Loading your virtual narwal...')
+    this.add.text(250, 200, 'Loading your virtual pet...')
 
     this.load.image('loaderBg', './assets/images/loader-bg.png')
     this.load.image('loaderBar', './assets/images/loader-bar.png')
     this.load.image('background', './assets/images/seasprite.png')
-    this.load.image('narwal', './assets/images/narwal2.png')
+    this.load.image('narwhal', './assets/images/narwhal2.png')
     this.load.image('shrimp', './assets/images/shrimp.png')
     this.load.image('button', './assets/images/button.png')
     this.load.image('friend1', './assets/images/1.png')

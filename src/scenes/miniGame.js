@@ -9,7 +9,7 @@ export default class extends Phaser.Scene {
 
   preload() {
     this.load.image("underwater", "./assets/images/bluee.png");
-    this.load.image("gameNarwal", "./assets/images/PixelArt.png");
+    this.load.image("gameNarwhal", "./assets/images/PixelArt.png");
     this.load.image("squid", "./assets/images/squid.png");
     this.load.image("orca", "./assets/images/orca.png");
   }
@@ -32,9 +32,9 @@ export default class extends Phaser.Scene {
     // CHARACTERS & SETUP
     this.background = this.add.sprite(400, 300, "underwater");
     this.background.setScale(0.6);
-    this.miniNarwal = this.physics.add.sprite(50, 500, "gameNarwal");
-    this.miniNarwal.setScale(0.2);
-    this.miniNarwal.setCollideWorldBounds(true);
+    this.miniNarwhal = this.physics.add.sprite(50, 500, "gameNarwhal");
+    this.miniNarwhal.setScale(0.2);
+    this.miniNarwhal.setCollideWorldBounds(true);
     let home = this.add.image(45, 560, "home");
     home.setScale(0.06);
     home.setInteractive();
@@ -58,7 +58,7 @@ export default class extends Phaser.Scene {
     this.introText = this.add.text(
       146,
       200,
-      "Collect the squids from the squidRain to feed your Narwal! \nBut be careful of the Orcas! \nClick START to start playing and use the arrow keys to move!"
+      "Collect the squids from the squidRain to feed your Narwhal! \nBut be careful of the Orcas! \nClick START to start playing and use the arrow keys to move!"
     );
 
     // ADD GAME START EVENT
@@ -128,9 +128,9 @@ export default class extends Phaser.Scene {
       },
     });
 
-    // COLLISION NARWAL & ORCA
-    this.physics.add.overlap(this.miniNarwal, this.orca, () => {
-      this.flashNarwal();
+    // COLLISION NARWHAL & ORCA
+    this.physics.add.overlap(this.miniNarwhal, this.orca, () => {
+      this.flashNarwhal();
       this.decreaseHp();
       this.updateScoreText();
     });
@@ -139,7 +139,7 @@ export default class extends Phaser.Scene {
   squidRain() {
     const x = Math.floor(Math.random() * Math.floor(800));
     const squid = this.physics.add.image(x, 0, "squid");
-    this.miniNarwal.setCollideWorldBounds(true);
+    this.miniNarwhal.setCollideWorldBounds(true);
     squid.setScale(0.1);
 
     this.tweens.add({
@@ -161,8 +161,8 @@ export default class extends Phaser.Scene {
       },
     });
 
-    // COLLISION NARWAL + SQUID
-    this.physics.add.overlap(this.miniNarwal, squid, () => {
+    // COLLISION NARWHAL + SQUID
+    this.physics.add.overlap(this.miniNarwhal, squid, () => {
       this.squidDisappear(squid);
       this.increaseScore();
       this.updateScoreText();
@@ -178,12 +178,12 @@ export default class extends Phaser.Scene {
     squid.destroy();
   }
 
-  flashNarwal() {
-    this.miniNarwal.setTint(0xff00ff, 0xffff00, 0x0000ff, 0xff0000);
-    this.colorNarwal = this.time.addEvent({
+  flashNarwhal() {
+    this.miniNarwhal.setTint(0xff00ff, 0xffff00, 0x0000ff, 0xff0000);
+    this.colorNarwhal = this.time.addEvent({
       delay: 2000,
       callback: () => {
-        this.miniNarwal.clearTint();
+        this.miniNarwhal.clearTint();
       },
       callbackScope: this,
     });
@@ -245,7 +245,7 @@ export default class extends Phaser.Scene {
   stopGame() {
     this.finishedGame = true;
     this.gameStarted = false;
-    this.miniNarwal.setVelocity(0, 0);
+    this.miniNarwhal.setVelocity(0, 0);
     this.timedOrca.remove(false);
     this.timedSquid.remove(false);
     this.exitText();
@@ -253,7 +253,7 @@ export default class extends Phaser.Scene {
 
   failGame() {
     this.finishedGame = true;
-    this.miniNarwal.setVelocity(0, 0);
+    this.miniNarwhal.setVelocity(0, 0);
     this.timedOrca.remove(false);
     this.timedSquid.remove(false);
   }
@@ -278,17 +278,17 @@ export default class extends Phaser.Scene {
 
   update() {
     // UPDATE MOVEMENTS - LEFT & RIGHT
-    this.miniNarwal.setVelocity(0, 0);
+    this.miniNarwhal.setVelocity(0, 0);
     if (this.cursors.left.isDown) {
-      this.miniNarwal.setVelocity(-325, 0);
+      this.miniNarwhal.setVelocity(-325, 0);
     } else if (this.cursors.right.isDown) {
-      this.miniNarwal.setVelocity(325, 0);
+      this.miniNarwhal.setVelocity(325, 0);
     }
     // UP & DOWN
     if (this.cursors.up.isDown) {
-      this.miniNarwal.setVelocity(0, -325);
+      this.miniNarwhal.setVelocity(0, -325);
     } else if (this.cursors.down.isDown) {
-      this.miniNarwal.setVelocity(0, 325);
+      this.miniNarwhal.setVelocity(0, 325);
     }
   }
 }
