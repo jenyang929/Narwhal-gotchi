@@ -41,4 +41,4 @@ To start your server
 npm start 
 ```
 
-Then go to <a href="http://localhost:3000">http://localhost:3000<a> and start playing! 
+Then go to <a href="http://localhost:3000/">http://localhost:3000/<a> and start playing! 
