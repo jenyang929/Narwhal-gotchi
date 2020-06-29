@@ -31,10 +31,14 @@ If you would like to play locally or modify this game,
 
 Then install the dependencies 
 
-``` npm install ```
+``` 
+npm install 
+```
 
 To start your server 
 
-``` npm start ```
+``` 
+npm start 
+```
 
 Then go to <a href="http://localhost:3000">http://localhost:3000<a> and start playing! 
