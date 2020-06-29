@@ -31,13 +31,13 @@ If you would like to play locally or modify this game,
 
 <strong>Fork</strong> and <strong>clone</strong> this repository
 
-Then install the dependencies 
+Then install the dependencies: 
 
 ``` 
 npm install 
 ```
 
-To start your server 
+To start your server:
 
 ``` 
 npm start 
