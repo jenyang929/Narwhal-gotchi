@@ -1,6 +1,8 @@
 # Narwhal-Gotchi
 Click <a href="https://narwhal-gotchi.web.app/">here</a> to see your Virtual Pet! 
 
+<img src="https://user-images.githubusercontent.com/62160389/86038633-36823480-ba0f-11ea-833d-bc7c3e49a9c5.png" height="40%" width="40%"> <img src="https://user-images.githubusercontent.com/62160389/86038815-82cd7480-ba0f-11ea-9ae0-631ce354cb69.png" height="40%" width="40%">
+
 ## Introduction -
 
 - Inspired by tamagotchi
